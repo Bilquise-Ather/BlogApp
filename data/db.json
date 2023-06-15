@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "The kite runner",
+      "body": "xyzzzzzzzzzzz2",
+      "author": "khalid hossaini",
+      "id": 2
+    },
+    {
+      "title": "Fault in our stars",
+      "body": "xyzzzzzzzzzzz3",
+      "author": "john green",
+      "id": 3
+    },
+    {
+      "title": "Romeo & Juliet",
+      "body": "lorem ipsum.........",
+      "author": "Shakespere",
+      "id": 4
+    }
+  ]
+}
