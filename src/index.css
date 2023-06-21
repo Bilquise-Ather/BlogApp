@@ -7,32 +7,55 @@
   color: #333;
 }
 .navbar {
+  background-color: #bf5372;
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  justify-content: space-between;
 }
+
 .navbar h1 {
-  color: #f1356d;
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
 }
+
 .navbar .links {
-  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
+
 .navbar a {
-  margin-left: 16px;
+  color: #fff;
   text-decoration: none;
-  padding: 6px;
+  padding: 8px 12px;
+  margin-right: 10px;
+  border-radius: 4px;
 }
+
 .navbar a:hover {
-  color: #f1356d;
+  background-color: #fff;
+  color: #ae785d;
 }
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar h1 {
+    margin-bottom: 10px;
+  }
+
+  .navbar .links {
+    margin-top: 10px;
+  }
+
+  .navbar a {
+    margin: 0;
+  }
 }
+
 
 /* blog previews / list */
 .blog-preview {
@@ -45,7 +68,7 @@
 }
 .blog-preview h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #ae785d;
   margin-bottom: 8px;
 }
 .blog-preview a{
@@ -55,19 +78,49 @@
 /* blog details page */
 .blog-details h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #ae785d;
   margin-bottom: 10px;
 }
 .blog-details div {
   margin: 20px 0;
 }
 .blog-details button {
-  background: #f1356d;
+  background: #ae785d;
   color: #fff;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+.blog-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.blog-list th,
+.blog-list td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.blog-list th {
+  background-color: #f2f2f2;
+}
+
+.blog-list button {
+  padding: 4px 8px;
+  background-color: #bf5372;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+
+.blog-list button:hover {
+  background-color: #ae785d;
 }
 
 /* create new blog form */
@@ -82,7 +135,7 @@
 }
 .create h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #ae785d;
   margin-bottom: 30px;
 }
 .create input, .create textarea, .create select {
@@ -94,7 +147,7 @@
   display: block;
 }
 .create button {
-  background: #f1356d;
+  background: #ae785d;
   color: #fff;
   border: 0;
   padding: 8px;

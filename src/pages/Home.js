@@ -1,39 +1,43 @@
-
+import React, { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 import useFetch from '../hooks/useFetch';
 
 const Home = () => {
-    // const [name, setName] = useState('caroline');
-    // const [age, setAge] = useState(25);
+    const { data: blogs, isPending, error } = useFetch('http://localhost:3000/getAllBlogs');
+    const [blogData, setBlogData] = useState([]);
 
+    useEffect(() => {
+        if (blogs) {
+            setBlogData(blogs.data);
+        }
+    }, [blogs]);
 
-    // const handleClick = (name) => {
-    //     console.log('Hello,' + name);
-    //     setName('klaus');
-    //     setAge(30)
-    // }
-    // return (
-    //     <div className="home">
-    //         <h2>Homepage</h2>
-    //         <p>{name} is {age} years old</p>
-    //         <button onClick={() => handleClick('mario')}>Click Me</button>
-    //     </div>
-    // );
+    const handleDelete = async (blogId) => {
+        console.log(blogId, 'blog');
+        try {
+            const response = await fetch(`http://localhost:3000/deleteBlog/${blogId}`, {
+                method: 'DELETE',
+            });
 
-
-    /////////////////////////////////////////////////////
-    const { data: blogs, isPending, error } = useFetch('http://localhost:3000/getAllBlogs')
+            if (response.ok) {
+                console.log('Delete was successful');
+                const updatedBlogs = blogData.filter((blog) => blog._id !== blogId);
+                setBlogData(updatedBlogs);
+            } else {
+                console.log('Delete failed');
+            }
+        } catch (error) {
+            console.error('Error deleting blog:', error);
+        }
+    };
 
     return (
         <div className="home">
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
-            {blogs && <BlogList blogs={blogs} title='All Blogs!' />
-            }
+            {blogData && <BlogList blogs={blogData} title="All Blogs!" handleDelete={handleDelete} />}
         </div>
-    )
-
-
-}
+    );
+};
 
 export default Home;

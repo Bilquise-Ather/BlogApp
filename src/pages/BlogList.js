@@ -1,8 +1,15 @@
-
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BlogList = ({ blogs, title, handleDelete }) => {
 
-    console.log(blogs);
+    const navigate = useNavigate();
+
+    const handleEdit = (blog) => {
+        console.log(blog);
+        const blogId = blog._id;
+        navigate(`/getBlogs/${blogId}`);
+    };
 
 
     return (
@@ -19,16 +26,16 @@ const BlogList = ({ blogs, title, handleDelete }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {blogs.data.map((blog) => (
-                        <tr key={blog.id}>
+                    {blogs.map((blog) => (
+                        <tr key={blog._id}>
                             <td>{blog.title}</td>
                             <td>{blog.author}</td>
                             <td>{blog.body}</td>
                             <td>
-                                <button >Edit</button>
+                                <button className='edit' onClick={() => handleEdit(blog)}>Edit</button>
                             </td>
                             <td>
-                                <button onClick={() => handleDelete(blog._id)}>Delete</button>
+                                <button className='delete' onClick={() => handleDelete(blog._id)}>Delete</button>
                             </td>
                         </tr>
                     ))}
@@ -36,6 +43,6 @@ const BlogList = ({ blogs, title, handleDelete }) => {
             </table>
         </div>
     );
-}
+};
 
 export default BlogList;

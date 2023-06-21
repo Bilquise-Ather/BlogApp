@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const token = localStorage.getItem('accessToken');
+
     const handleLogout = () => {
         fetch('http://localhost:3000/logout', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                'Token': token
             }
         })
             .then(() => {
@@ -28,6 +31,7 @@ const Navbar = () => {
                 <Link to="/user-reg">Sign-up</Link>
                 <Link to="/login">Login</Link>
                 <Link to="/" onClick={handleLogout} style={{ textDecoration: 'none', cursor: 'pointer' }}>Logout</Link>
+                <Link to="/profile">Profile</Link>
             </div>
         </nav>
     );

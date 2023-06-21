@@ -7,7 +7,7 @@ import BlogDetails from './pages/BlogDetails';
 import NotFound from './pages/NotFound';
 import UserRegistration from './pages/UserRegistration';
 import Login from './pages/Login';
-import Logout from './pages/Logout';
+import Profile from './pages/Profile';
 import './index.css';
 
 
@@ -20,13 +20,17 @@ function App() {
 
         <Route exact path="/create" element={<BaseLayout Children={Create} />} />
 
-        <Route exact path="/getBlogs/:_id" element={<BaseLayout Children={BlogDetails} />} />
+        {/* <Route exact path="/create/:blogId" element={<BaseLayout Children={Create} />} /> */}
+
+        <Route exact path="/getBlogs/:_id" element={<BaseLayout Children={Create} />} />
+
+
 
         <Route exact path="/user-reg" element={<BaseLayout Children={UserRegistration} />} />
 
         <Route exact path="/login" element={<BaseLayout Children={Login} />} />
 
-        <Route exact path="/logout" element={<BaseLayout Children={Logout} />} />
+        <Route exact path="/profile" element={<BaseLayout Children={Profile} />} />
 
 
         <Route exact path="*" element={<BaseLayout Children={NotFound} />} />

@@ -9,18 +9,26 @@ const UserRegister = () => {
         formState: { errors },
     } = useForm();
 
+
     const onSubmit = (data) => {
         console.log(data, 'data');
         fetch('http://localhost:3000/register', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
-        }).then(() => {
-            console.log('Registration successfull!');
-            localStorage.setItem('userData', JSON.stringify(data));
         })
-
+            .then(response => response.json())
+            .then(responseData => {
+                console.log(responseData.data, 'rd');
+                console.log('Registration successful!');
+                const userId = responseData.data._id;
+                localStorage.setItem('userId', userId);
+            })
+            .catch(error => {
+                console.error('Error registering user:', error);
+            });
     };
+
 
     return (
         <>
