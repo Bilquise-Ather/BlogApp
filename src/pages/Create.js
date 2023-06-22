@@ -8,6 +8,7 @@ const Create = () => {
     const [author, setAuthor] = useState('mario');
     const [isPending, setIsPending] = useState(false);
     const navigate = useNavigate();
+    const userId = localStorage.getItem('userId');
 
     useEffect(() => {
         if (_id) {
@@ -28,8 +29,8 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const blog = { _id: _id || null, title, body, author };
-
+        const blog = { _id: _id || null, title, body, author, userId };
+        console.log(blog, 'b');
         setIsPending(true);
 
         const url = _id ? `http://localhost:3000/updateBlog` : `http://localhost:3000/blogs`;

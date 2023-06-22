@@ -68,7 +68,7 @@
 }
 .blog-preview h2 {
   font-size: 20px;
-  color: #ae785d;
+  color: #bf5372;
   margin-bottom: 8px;
 }
 .blog-preview a{
@@ -78,14 +78,14 @@
 /* blog details page */
 .blog-details h2 {
   font-size: 20px;
-  color: #ae785d;
+  color: #bf5372;
   margin-bottom: 10px;
 }
 .blog-details div {
   margin: 20px 0;
 }
 .blog-details button {
-  background: #ae785d;
+  background: #bf5372;
   color: #fff;
   border: 0;
   padding: 8px;
@@ -111,11 +111,22 @@
 }
 
 .blog-list button {
-  padding: 4px 8px;
+  padding: 8px 16px;
+  background-color: #f2f2f2;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.blog-list button.edit {
   background-color: #bf5372;
   color: #fff;
-  border: none;
-  cursor: pointer;
+}
+
+.blog-list button.delete {
+  background-color: #bf5372;
+  color: #fff;
 }
 
 
@@ -135,7 +146,7 @@
 }
 .create h2 {
   font-size: 20px;
-  color: #ae785d;
+  color: #bf5372;
   margin-bottom: 30px;
 }
 .create input, .create textarea, .create select {
@@ -147,7 +158,7 @@
   display: block;
 }
 .create button {
-  background: #ae785d;
+  background: #bf5372;
   color: #fff;
   border: 0;
   padding: 8px;
