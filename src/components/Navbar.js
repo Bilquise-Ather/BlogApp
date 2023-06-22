@@ -27,7 +27,7 @@ const Navbar = () => {
             <div className="links">
                 <Link to="/">Home</Link>
                 <Link to="/create">New Blog</Link>
-                <Link to="/getBlogs/:_id">Blog Details</Link>
+                {/* <Link to="/getBlogs/:_id">Blog Details</Link> */}
                 <Link to="/user-reg">Sign-up</Link>
                 <Link to="/login">Login</Link>
                 <Link to="/" onClick={handleLogout} style={{ textDecoration: 'none', cursor: 'pointer' }}>Logout</Link>

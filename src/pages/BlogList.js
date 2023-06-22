@@ -17,38 +17,31 @@ const BlogList = ({ blogs, title, handleDelete }) => {
     return (
         <div className="blog-list">
             <h2>{title}</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Body</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {blogs.map((blog) => (
-                        <tr key={blog._id}>
-                            <td>{blog.title}</td>
-                            <td>{blog.author}</td>
-                            <td>{blog.body}</td>
-                            <td>
-                                {shouldShowButtons(blog) && (
-                                    <>
-                                        <button className='edit' onClick={() => handleEdit(blog)}>
-                                            Edit
-                                        </button>
-                                        <button className='delete' onClick={() => handleDelete(blog._id)}>
-                                            Delete
-                                        </button>
-                                    </>
-                                )}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <div className="card-container">
+                {blogs.map((blog) => (
+                    <div className="card card2" key={blog._id}>
+                        <div className="card-body">
+                            <h3 className="card-title">{blog.title}</h3>
+                            <p className="card-text">{blog.body}</p>
+                        </div>
+                        <div className="card-footer">
+                            <span className="author">{blog.author}</span>
+                            {shouldShowButtons(blog) && (
+                                <>
+                                    <button className="edit" onClick={() => handleEdit(blog)}>
+                                        Edit
+                                    </button>
+                                    <button className="delete" onClick={() => handleDelete(blog._id)}>
+                                        Delete
+                                    </button>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
+
     );
 };
 

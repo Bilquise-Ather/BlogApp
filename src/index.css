@@ -165,3 +165,122 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+
+/* profile styling */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card styling */
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card2 {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card-body {
+  background-color: #eddad2;
+  /* Pastel color */
+  padding: 20px;
+}
+
+.card-title {
+  color: #333333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: #666666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-footer {
+  background-color: #f8d7da;
+  /* Pastel color */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-muted {
+  color: #999999;
+  font-size: 14px;
+}
+
+
+/* Styling for form */
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.container .ui.divider {
+  margin: 20px 0;
+}
+
+.container .field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.container .field input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.container .field p {
+  color: red;
+  margin-top: 5px;
+}
+
+.container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #bf5372;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Profile = () => {
     const [blogs, setBlogs] = useState([]);
@@ -17,7 +18,7 @@ const Profile = () => {
             .then(data => {
                 console.log(data.data, 'data');
                 // Filter the blogs based on the userId
-                const userBlogs = data.data.filter(blog => blog.user == userId);
+                const userBlogs = data.data.filter(blog => blog.user === userId);
                 setBlogs(userBlogs);
             })
             .catch(error => {
@@ -28,17 +29,24 @@ const Profile = () => {
     console.log(userId, 'nblog');
 
     return (
-        <div className="profile">
+        <div className="container mt-4">
             <h2>My Blogs</h2>
             {blogs.length > 0 ? (
-                <ul>
+                <div className="row">
                     {blogs.map(blog => (
-                        <li key={blog._id}>
-                            <h3>{blog.title}</h3>
-                            <p>{blog.body}</p>
-                        </li>
+                        <div className="col-md-4" key={blog._id}>
+                            <div className="card">
+                                <div className="card-body bg-pastel">
+                                    <h5 className="card-title">{blog.title}</h5>
+                                    <p className="card-text">{blog.body}</p>
+                                </div>
+                                <div className="card-footer">
+                                    <small className="text-muted">By {blog.author}</small>
+                                </div>
+                            </div>
+                        </div>
                     ))}
-                </ul>
+                </div>
             ) : (
                 <p>No blogs found.</p>
             )}

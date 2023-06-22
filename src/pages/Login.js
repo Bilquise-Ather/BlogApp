@@ -43,7 +43,7 @@ const Login = () => {
     return (
         <>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <div className="container">
+                <div className="container" style={{ width: '30%' }}>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <h1>Login Form</h1>
                         <div className="ui divider"></div>
@@ -86,7 +86,7 @@ const Login = () => {
                                     <p style={{ color: 'red' }}>{errors.password.message}</p>
                                 )}
                             </div>
-                            <button className="fluid ui button blue" type="submit">
+                            <button className="fluid ui button blue" style={{ backgroundColor: '#bf5372' }} type="submit">
                                 Login
                             </button>
                         </div>
